@@ -39,9 +39,13 @@ function setup() {
 
 
 	Engine.run(engine);
-	box1 = createSprite (400,690,200,20);
-  	box2 = createSprite (300,650,20,100);
-	box3 = createSprite (500,650,20,100);
+	box1 = createSprite (400,650,200,20);
+  	box2 = createSprite (300,610,20,100);
+	box3 = createSprite (500,610,20,100);
+
+	b1 = new Box (400,650,200,20);
+	b2 = new Box (300,610,20,100);
+	b3 = new Box (500,610,20,100);
 
 	box1.shapeColor = "red";
 	box2.shapeColor = "red";
@@ -56,8 +60,12 @@ function draw() {
   packageSprite.y= packageBody.position.y 
 
   if(packageSprite.isTouching(box1 || box2 || box3)){
-	  package.restitution = 0;
+	  packageBody.restitution = 0;
   }
+  b1.display();
+  b2.display();
+  b3.display();
+
   drawSprites();
  
 }
